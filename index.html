@@ -1,0 +1,16 @@
+<body>
+    <ul id="students_ul"></ul>
+<script>
+    var ul = document.getElementById('students_ul');
+    fetch('https://node2023.onrender.com/student')
+      .then(response => response.json())
+      .then(json => {
+      json.forEach(element => {
+        let li = document.createElement('li');
+        li.innerHTML =element.name;
+        ul.appendChild(li);
+      });
+    })
+</script>
+
+</body>
